@@ -1,0 +1,9 @@
+.mission-tile-container {
+    margin-top: 16px;
+  }
+  
+  .mission-tile {
+    max-width: 300px;
+    border: 1px solid #ccc;
+    background-color: #17dadd;
+  }
