@@ -12,20 +12,16 @@ interface NasaApiResponse {
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  secretKey: string;
-  nasaApiResponse: NasaApiResponse;
+  
+  nasaApiResponse: string = '';
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
-    this.secretKey = API_KEY;
-    this.http.get<NasaApiResponse>('https://api.nasa.gov/planetary/apod?api_key=API_KEY').subscribe(
-      (response) => {
-        this.nasaApiResponse = response;
-      },
-      (error) => {
-        console.log('Error:', error);
-      }
-    );
+    secretKey: string = API_KEY;
+    this.http.get('https://api.nasa.gov/planetary/apod?api_key=' + this.secretKey).subscribe((res: any) => {
+      this.nasaApiResponse = res.url;
+    });
   }
 }
+
