@@ -18,6 +18,5 @@ export class MissionListComponent implements OnInit {
       console.log('this.rovers: ', this.rovers);
     });
   }
-
-
+  
 }
